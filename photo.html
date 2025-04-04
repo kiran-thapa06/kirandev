@@ -876,10 +876,10 @@
             
             <div class="gallery-filter">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="nature">Wedding</button>
-                <button class="filter-btn" data-filter="portrait">Nature</button>
+                <button class="filter-btn" data-filter="wedding">Wedding</button>
+                <button class="filter-btn" data-filter="food">food</button>
       
-                <button class="filter-btn" data-filter="travel">Travel</button>
+                <button class="filter-btn" data-filter="fest">Rice Feedin Ceremony</button>
             </div>
             
             <div class="gallery-grid" id="gallery-grid">
@@ -1029,96 +1029,85 @@
     <script>
        
 const galleryPhotos = [
+{
+        id: 3,
+        src: 'images/wedkiss.jpg',
+        alt: 'Nepali Wedding',
+        title: 'Nepali Wedding',
+        description: 'This is the Nepali wedding which was held on Hindu Temple in Germany Hamburg.',
+        category: 'wedding',
+        size: 'large'
+    },
     {
+        
         id: 1,
-        src: 'images/blury.jpg',
-        alt: 'Mountain Landscape at Sunrise',
-        title: 'Dawn in the Himalayas',
-        description: 'Captured during an early morning trek in Nepal',
-        category: 'nature',
+        src: 'images/wed1.jpg',
+        alt: 'Nepali Wedding',
+        title: 'Nepali Wedding',
+        description: 'This is the Nepali wedding which was held on Hindu Temple in Germany Hamburg.',
+        category: 'wedding',
         size: 'large'
     },
     {
         id: 2,
-        src: 'images/mirror.jpg',
-        alt: 'Portrait of a Local Villager',
-        title: 'Mountain Guardian',
-        description: 'An elderly villager from the remote regions of Dolpa',
-        category: 'nature',
+        src: 'images/wedbehuli.jpg',
+        alt: 'Nepali Wedding',
+        title: 'Nepali Wedding',
+        description: 'This is the Nepali wedding which was held on Hindu Temple in Germany Hamburg.',
+        category: 'wedding',
         size: 'large'
     },
-    {
-        id: 3,
-        src: '/api/placeholder/800/500',
-        alt: 'Kathmandu Streets',
-        title: 'Urban Pulse',
-        description: 'The chaotic beauty of downtown Kathmandu',
-        category: 'urban',
-        size: 'wide'
-    },
+    
+    
+    
+   
     {
         id: 4,
-        src: '/api/placeholder/500/500',
-        alt: 'Pokhara Lake View',
-        title: 'Reflections',
-        description: 'Phewa Lake with Annapurna backdrop',
-        category: 'nature',
-        size: ''
+        src: 'images/thukpa.jpg',
+        alt: 'Thukpa soup',
+        title: 'Winter Delicious Soup',
+        description: 'This is the very famous soup in nepal people love this to have it on winter',
+        category: 'food',
+        size: 'large'
     },
     {
         id: 5,
-        src: '/api/placeholder/800/800',
-        alt: 'Festival Celebration',
-        title: 'Holi Colors',
-        description: 'Celebration of the festival of colors in Thamel',
-        category: 'urban',
-        size: 'large'
-    },
-    {
-        id: 6,
-        src: '/api/placeholder/600/400',
-        alt: 'Everest Base Camp',
-        title: 'Journey to the Top',
-        description: 'The breathtaking view near Everest Base Camp',
-        category: 'travel',
-        size: 'wide'
-    },
-    {
-        id: 7,
-        src: '',
-        alt: 'Sherpa Guide',
-        title: 'Mountain Expert',
-        description: 'A veteran Sherpa guide sharing stories of the mountains',
-        category: 'portrait',
-        size: 'tall'
-    },
-    {
-        id: 8,
         src: 'images/momosoup.jpg',
         alt: 'Traditional Food',
         title:'MOMO',
         description: 'Momo soup Nepali Food',
-        category: 'portrait',
+        category: 'food',
         size: 'large'
     },
     {
-        id: 9,
-        src: '/api/placeholder/800/500',
-        alt: 'Durbar Square',
-        title: 'Ancient Architecture',
-        description: 'Historic temples at Patan Durbar Square',
-        category: 'travel',
-        size: 'wide'
+        id: 6,
+        src: 'images/chowmin.jpg',
+        alt: 'Traditional Food',
+        title:'MOMO',
+        description: 'Momo soup Nepali Food',
+        category: 'food',
+        size: 'large'
     },
     {
-        id: 10,
-        src: '/api/placeholder/500/800',
-        alt: 'Mountain Flora',
-        title: 'Himalayan Blooms',
-        description: 'Rare flowers found at high altitude',
-        category: 'nature',
-        size: 'tall'
+        id: 7,
+        src: 'images/chowminwithmomo.jpg',
+        alt: 'Traditional Food',
+        title:'MOMO',
+        description: 'Momo soup Nepali Food',
+        category: 'food',
+        size: 'large'
+    },
+    {
+        id: 7,
+        src: 'images/spicymomo.jpg',
+        alt: 'Traditional Food',
+        title:'MOMO',
+        description: 'Momo soup Nepali Food',
+        category: 'food',
+        size: 'large'
     }
+    
+
 ];
 
 const feedbackData = [
