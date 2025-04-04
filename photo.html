@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Thapa | Photography</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --light-color: #ecf0f1;
+            --dark-color: #1a252f;
+            --transition: all 0.4s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--light-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--dark-color);
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: url('./images/hero.jpg') center/cover no-repeat;
+            opacity: 0.7;
+            animation: zoom 20s infinite alternate;
+        }
+        
+        @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeUp 1.5s ease;
+        }
+        
+        .hero .btn {
+            animation: fadeUp 2s ease;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+        
+        /* Enhanced Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+        }
+        
+        .section-title-mero {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title-mero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+        .section-title-mero p{
+            color: var(--light-color);
+        }
+        .section-title-mero:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+    
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 200px;
+            grid-gap: 15px;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+        }
+        
+        .gallery-item.loaded {
+            animation: fadeIn 0.8s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 1.5rem;
+            color: white;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item .overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item .overlay p {
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: transform 0.6s ease;
+            opacity: 0.8;
+        }
+        
+        .gallery-item:hover .overlay h3,
+        .gallery-item:hover .overlay p {
+            transform: translateY(0);
+        }
+        
+        /* Gallery item sizes */
+        .gallery-item.wide {
+            grid-column: span 6;
+        }
+        
+        .gallery-item.tall {
+            grid-row: span 2;
+        }
+        
+        .gallery-item.large {
+            grid-column: span 6;
+            grid-row: span 2;
+        }
+        
+        /* Gallery filter */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .contact-info .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .contact-info .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .form-btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* Feedback Section */
+        .feedback {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .feedback-container {
+            margin-top: 3rem;
+        }
+        
+        .feedback-list {
+            margin-top: 2rem;
+        }
+        
+        .feedback-item {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .feedback-item.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .feedback-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feedback-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+        
+        .feedback-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .feedback-info .date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .feedback-content {
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 3rem 0;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin-bottom: 2rem;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Enhanced Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+        }
+        
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        
+        .modal-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+        
+        .modal-nav button:hover {
+            background: var(--accent-color);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* Toast notifications */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .toast {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            animation: slideIn 0.3s ease forwards;
+            max-width: 300px;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .toast.success {
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .toast.error {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .toast-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .toast-content {
+            flex: 1;
+        }
+        
+        .toast-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            
+            .gallery-item.wide {
+                grid-column: span 3;
+            }
+            
+            .gallery-item.large {
+                grid-column: span 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -250px;
+                background-color: var(--primary-color);
+                height: 100vh;
+                width: 250px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem;
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 1.5rem;
+                width: 100%;
+            }
+            
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 150px;
+            }
+            
+            .gallery-item.wide,
+            .gallery-item.large {
+                grid-column: span 2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            
+            .gallery-item {
+                grid-column: span 1 !important;
+                height: 250px;
+            }
+            
+            .gallery-item.tall {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">Kiran<span>Thapa</span></a>
+            <button class="mobile-nav-toggle">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Capturing Moments, Creating Memories</h1>
+            <p>Professional photography by Kiran Thapa - Front-end Developer, Yoga Master, and Dancer</p>
+            <a href="#gallery" class="btn">Explore Gallery</a>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title-mero">
+                <h2>My Photography</h2>
+                <p>A collection of my best captures</p>
+            </div>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Wedding</button>
+                <button class="filter-btn" data-filter="portrait">Nature</button>
+      
+                <button class="filter-btn" data-filter="travel">Travel</button>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+            
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have a question or want to work together?</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>I'd love to hear from you! Whether you're interested in a photoshoot, yoga session, or web development project, feel free to reach out.</p>
+                    <div class="info-item">
+                        <strong>Email:</strong> kiranthapa.me@gmail.com
+                    </div>
+                    <div class="info-item">
+                        <strong>Based in:</strong> Kathmandu, Nepal
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/kiran.thapa.77377692/"data-aos="fade-up" data-aos-delay="100" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kiran_thapa.me/"data-aos="fade-up" data-aos-delay="200" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/kiran-thapa-342a60265/"data-aos="fade-up" data-aos-delay="300" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        
+                    </div>
+    
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Feedback</h2>
+                <p>What people are saying about my work</p>
+            </div>
+            
+            <div class="feedback-container">
+                <form id="feedback-form">
+                    <div class="form-group">
+                        <label for="feedback-name">Your Name</label>
+                        <input type="text" id="feedback-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedback-content">Your Feedback</label>
+                        <textarea id="feedback-content" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-btn">Submit Feedback</button>
+                </form>
+                
+                <div class="feedback-list" id="feedback-list">
+                    <!-- Feedback items will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Kiran Thapa</h3>
+                <p>Front-end Developer, Photographer, Yoga Master & Dancer</p>
+                <p>Capturing moments and creating unique digital experiences.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Yoga Classes</a></li>
+                
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright container">
+            <p>&copy; 2025 Kiran Thapa. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Enhanced Modal -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <img id="modal-image" src="" alt="Full size image">
+            <div class="modal-caption" id="modal-caption"></div>
+            <div class="modal-nav">
+                <button id="prev-btn">&lt;</button>
+                <button id="next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+    
+    <script>
+       
+const galleryPhotos = [
+    {
+        id: 1,
+        src: 'images/blury.jpg',
+        alt: 'Mountain Landscape at Sunrise',
+        title: 'Dawn in the Himalayas',
+        description: 'Captured during an early morning trek in Nepal',
+        category: 'nature',
+        size: 'large'
+    },
+    {
+        id: 2,
+        src: 'images/mirror.jpg',
+        alt: 'Portrait of a Local Villager',
+        title: 'Mountain Guardian',
+        description: 'An elderly villager from the remote regions of Dolpa',
+        category: 'nature',
+        size: 'large'
+    },
+    {
+        id: 3,
+        src: '/api/placeholder/800/500',
+        alt: 'Kathmandu Streets',
+        title: 'Urban Pulse',
+        description: 'The chaotic beauty of downtown Kathmandu',
+        category: 'urban',
+        size: 'wide'
+    },
+    {
+        id: 4,
+        src: '/api/placeholder/500/500',
+        alt: 'Pokhara Lake View',
+        title: 'Reflections',
+        description: 'Phewa Lake with Annapurna backdrop',
+        category: 'nature',
+        size: ''
+    },
+    {
+        id: 5,
+        src: '/api/placeholder/800/800',
+        alt: 'Festival Celebration',
+        title: 'Holi Colors',
+        description: 'Celebration of the festival of colors in Thamel',
+        category: 'urban',
+        size: 'large'
+    },
+    {
+        id: 6,
+        src: '/api/placeholder/600/400',
+        alt: 'Everest Base Camp',
+        title: 'Journey to the Top',
+        description: 'The breathtaking view near Everest Base Camp',
+        category: 'travel',
+        size: 'wide'
+    },
+    {
+        id: 7,
+        src: '',
+        alt: 'Sherpa Guide',
+        title: 'Mountain Expert',
+        description: 'A veteran Sherpa guide sharing stories of the mountains',
+        category: 'portrait',
+        size: 'tall'
+    },
+    {
+        id: 8,
+        src: 'images/momosoup.jpg',
+        alt: 'Traditional Food',
+        title:'MOMO',
+        description: 'Momo soup Nepali Food',
+        category: 'portrait',
+        size: 'large'
+    },
+    {
+        id: 9,
+        src: '/api/placeholder/800/500',
+        alt: 'Durbar Square',
+        title: 'Ancient Architecture',
+        description: 'Historic temples at Patan Durbar Square',
+        category: 'travel',
+        size: 'wide'
+    },
+    {
+        id: 10,
+        src: '/api/placeholder/500/800',
+        alt: 'Mountain Flora',
+        title: 'Himalayan Blooms',
+        description: 'Rare flowers found at high altitude',
+        category: 'nature',
+        size: 'tall'
+    }
+];
+
+const feedbackData = [
+    {
+        name: 'Ramesh Sharma',
+        date: '15 March 2025',
+        content: 'Kiran captured our wedding beautifully. The photos truly reflect the joy and emotion of our special day. Highly recommended!'
+    },
+    {
+        name: 'Sarah Johnson',
+        date: '2 February 2025',
+        content: 'I took Kiran\'s yoga class and was impressed with his expertise. He also took some amazing photos for my portfolio. A multi-talented professional!'
+    },
+    {
+        name: 'Deepak Gurung',
+        date: '18 January 2025',
+        content: 'Working with Kiran on our website was a great experience. He has an eye for detail and delivers quality work ahead of schedule.'
+    }
+];
+
+const galleryGrid = document.getElementById('gallery-grid');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const feedbackList = document.getElementById('feedback-list');
+const modal = document.getElementById('image-modal');
+const modalImage = document.getElementById('modal-image');
+const modalCaption = document.getElementById('modal-caption');
+const modalClose = document.getElementById('modal-close');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+const contactForm = document.getElementById('contact-form');
+const feedbackForm = document.getElementById('feedback-form');
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+
+let currentImageIndex = 0;
+
+
+function initGallery() {
+  
+    galleryGrid.innerHTML = '';
+
+    galleryPhotos.forEach((photo, index) => {
+        const item = document.createElement('div');
+        item.className = `gallery-item ${photo.size}`;
+        item.dataset.category = photo.category;
+        
+        // Add data for modal
+        item.dataset.index = index;
+        
+        item.innerHTML = `
+            <img src="${photo.src}" alt="${photo.alt}">
+            <div class="overlay">
+                <h3>${photo.title}</h3>
+                <p>${photo.description}</p>
+            </div>
+        `;
+        
+        // Add click event for modal
+        item.addEventListener('click', () => {
+            openModal(index);
+        });
+        
+        galleryGrid.appendChild(item);
+        
+        // Add load animation with delay based on index
+        setTimeout(() => {
+            item.classList.add('loaded');
+        }, 100 * index);
+    });
+}
+
+// Filter gallery items
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    
+    items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Initialize feedback section
+function initFeedback() {
+    feedbackList.innerHTML = '';
+    
+    feedbackData.forEach((feedback, index) => {
+        const item = document.createElement('div');
+        item.className = 'feedback-item';
+        
+        item.innerHTML = `
+            <div class="feedback-header">
+                <div class="feedback-avatar">${feedback.name.charAt(0)}</div>
+                <div class="feedback-info">
+                    <h4>${feedback.name}</h4>
+                    <div class="date">${feedback.date}</div>
+                </div>
+            </div>
+            <div class="feedback-content">
+                ${feedback.content}
+            </div>
+        `;
+        
+        feedbackList.appendChild(item);
+        
+        // Add animation with delay
+        setTimeout(() => {
+            item.classList.add('active');
+        }, 200 * index);
+    });
+}
+
+// Open modal with specified image index
+function openModal(index) {
+    currentImageIndex = index;
+    const photo = galleryPhotos[index];
+    
+    modalImage.src = photo.src;
+    modalImage.alt = photo.alt;
+    modalCaption.innerHTML = `<h3>${photo.title}</h3><p>${photo.description}</p>`;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+// Close modal
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Navigate to previous image
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+    openModal(currentImageIndex);
+}
+
+// Navigate to next image
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryPhotos.length;
+    openModal(currentImageIndex);
+}
+
+// Show toast notification
+function showToast(message, type = 'success') {
+    const toastContainer = document.getElementById('toast-container');
+    
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    toast.innerHTML = `
+        <div class="toast-icon">${type === 'success' ? '✓' : '⚠'}</div>
+        <div class="toast-content">${message}</div>
+        <button class="toast-close">×</button>
+    `;
+    
+    toastContainer.appendChild(toast);
+    
+    // Remove toast after 5 seconds
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 300);
+    }, 5000);
+    
+    // Close toast on click
+    toast.querySelector('.toast-close').addEventListener('click', () => {
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            toastContainer.removeChild(toast);
+        }, 300);
+    });
+}
+
+// Toggle mobile navigation
+function toggleMobileNav() {
+    navMenu.classList.toggle('active');
+}
+
+// Event Listeners
+window.addEventListener('DOMContentLoaded', () => {
+    // Initialize gallery and feedback
+    initGallery();
+    initFeedback();
+    
+    // Filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Filter gallery
+            filterGallery(button.dataset.filter);
+        });
+    });
+    
+    // Modal controls
+    modalClose.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
+    
+    // Close modal when clicking outside content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Keyboard navigation for modal
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+    });
+    
+    // Contact form submission
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Simulate form submission
+        setTimeout(() => {
+            showToast('Your message has been sent successfully!');
+            contactForm.reset();
+        }, 1000);
+    });
+    
+    // Feedback form submission
+    feedbackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('feedback-name').value;
+        const content = document.getElementById('feedback-content').value;
+        
+        // Create a new feedback item
+        const today = new Date();
+        const dateStr = today.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
+        
+        const newFeedback = {
+            name: name,
+            date: dateStr,
+            content: content
+        };
+        
+        // Add to the beginning of feedbackData array
+        feedbackData.unshift(newFeedback);
+        
+        // Refresh feedback list
+        initFeedback();
+        
+        // Reset form and show toast
+        feedbackForm.reset();
+        showToast('Thank you for your feedback!');
+    });
+    
+    // Mobile navigation toggle
+    mobileNavToggle.addEventListener('click', toggleMobileNav);
+    
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMobileNav();
+            }
+        });
+    });
+    
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.2
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe feedback items
+    document.querySelectorAll('.feedback-item').forEach(item => {
+        observer.observe(item);
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
