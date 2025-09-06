@@ -1,231 +1,455 @@
 <!DOCTYPE html>
-<html lang="en" class style="--scroll-padding:162;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>My resume</title>
-    <!--linking my style sheet in html-->
+    <title>Kiran Thapa - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Add this to your HTML <head> -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="icon"type="image/jpg"href="images/favicon.jpg">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <!-- Hamburger Menu Icon (Only for Small Screens) -->
-    
-    <div class="hamburger" id="hamburger">&#9776;</div>
+   <div id="loading-screen">
+        <!-- Animated background particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
 
-    <nav class="navbar">
-    <!--Using ahref (reference to the link or an html file)-->
-    <!--Using title makes our hyperlink more understanding -->
-    <ul>
-    <li><a href="index.html" title="Leads towards Home page">Home</a></li>
-    <li><a href="#about" title="Leads towards introduction">About</a></li>
-    <li><a href="#education" title="Leads towards Education">Education</a></li>
-    <li><a href="#experience" title="Leads towards Experience">Experience</a></li>
-    <li><a href="#videos" title="Leads towards Personal Vlog">Videos</a></li>
-    <li><a href="photo.html" title="Leads towards Personal Vlog">Moments & Inquire</a></li>
- 
-    </ul>
+        <!-- Cinematic vignette effect -->
+        <div class="vignette"></div>
+
+        <div class="loader">
+            <!-- Name reveal animation -->
+            <div class="name-container">
+                <h1 class="name-text">Kiran Thapa</h1>
+                <div class="name-overlay"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="subtitle">Portfolio Loading</div>
+
+            <!-- Advanced loading rings -->
+            <div class="loader-container">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-center"></div>
+            </div>
+        </div>
+
+        <!-- Progress indicator -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Preparing Experience...</div>
+        </div>
+    </div>
+
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">KT</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                 <a href="#about" class="nav-item">Home</a>
+                        <a href="#skills" class="nav-item">Skills</a>
+                        <a href="#education" class="nav-item">Education</a>
+                        <a href="#portfolio" class="nav-item">Portfolio</a>
+                        <a href="photo.html" class="nav-item">Moments & Inquire</a>
+                        <a href="#contact" class="nav-item contact-btn">CONTACT ME</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-    <!--Here instead of image i choosed to upload the video-->
-    <div class="video-container">
-    <video class="stylish-video" autoplay loop muted>
-        <source src="images/butterfly.mp4"type="video/mp4">
-        </video>
-  
-        <div class="overlay">
-            <h2>WELCOME</h2>
-        <article>
-            <p>Did you know butterflies can't see their own wings?<br>
-                It's sad they can't see how beautiful they are.<br>
-                And I think you're a butterfly.
-                You may not see it, but you are beautiful.
-            </p></article>
-</div>
-</div>
-<section id="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="text">
-                <h1>About Me</h1>
-                <p>Hello, my name is Kiran Thapa, and I am from Nepal. 
-                    I am currently pursuing my bachelor's degree at 
-                    <a href="https://www.haw-hamburg.de/" target="_blank">Hamburg University of Applied Sciences (HAW)</a>.
-                    I am a passionate Front-End developer with a growing interest in this field. 
-                    Over time, my fascination with web design and development has deepened as I explore various web pages and layouts.
-                    I often find myself envisioning how I can enhance and refine these designs. 
-                    While I am continually learning and improving my skills, I am excited about the journey of growth and innovation that this field offers.
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-diagonal">
+            <div class="hero-left">
+                <div class="hero-content">
+                    <div class="brand-logo">
+                        <span class="logo-icon">KT</span>
+                    </div>
+                    <div class="hero-text">
+                        <h2 class="hero-greeting">Hi, I am</h2>
+                        <h1 class="hero-name">Kiran Thapa</h1>
+                        <p class="hero-role">Front-end Developer / UI Designer</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/kiran_thapa.me/" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kiran-thapa-342a60265/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image-container">
+                    <div class="hero-nav">
+                        <a href="#about" class="nav-item">About me</a>
+                        <a href="#skills" class="nav-item">Skills</a>
+                        <a href="#education" class="nav-item">Education</a>
+                        <a href="#portfolio" class="nav-item">Portfolio</a>
+                        <a href="photo.html" class="nav-item">Moments & Inquire</a>
+                        <a href="#contact" class="nav-item contact-btn">CONTACT ME</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="images/bgr.png" alt="Kiran Thapa" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ABOUT ME</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-text">
+                    Hello, my name is Kiran Thapa, and I am from Nepal. I am currently pursuing my bachelor's degree at 
+                    Hamburg University of Applied Sciences (HAW). I am a passionate Front-End developer with a growing 
+                    interest in web design and development.
+                </p>
+                <a href="#portfolio" class="explore-btn">EXPLORE</a>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>DESIGN</h3>
+                    <p>I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>DEVELOPMENT</h3>
+                    <p>I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>MAINTENANCE</h3>
+                    <p>I can design the site based on your needs and suggestions. I can also design the site from scratch and consult you during the job.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SKILLS</h2>
+            </div>
+            <div class="skills-content">
+                <h3 class="skills-subtitle">USING NOW:</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon html5">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon css3">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon javascript">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <span>JAVASCRIPT</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon react">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <span>REACT</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <span>GIT</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">EDUCATION</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021 - Present</div>
+                        <h3>Hamburg University of Applied Sciences (HAW)</h3>
+                        <p>Pursuing a Bachelor's degree in Information and Electrical Engineering</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>TU Board, Aadikavi Bhanubhakta Campus</h3>
+                        <p>Pursued Information and Communication Technology Education. Achieved a GPA of 3.20 in the first semester and 3.25 in the second.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <h3>Satyawati Higher Secondary School</h3>
+                        <p>Completed up to Grade 10 at Satyawati Higher Secondary School with a GPA of 3.56.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">EXPERIENCE</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-content">
+                        <h3>Front-End Developer Intern</h3>
+                        <h4>28Softwares Pvt. Ltd. | 2025</h4>
+                        <p>Developed responsive web applications and worked with HTML, CSS, JavaScript, and React.js.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card-icon">📸</div>
+                    <div class="card-content">
+                        <h3>Editorial Photography</h3>
+                        <h4>2020</h4>
+                        <p>Captured photographs for Paris MOEVIR magazine, featuring Miss Globe Germany 2020.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card-icon">🎬</div>
+                    <div class="card-content">
+                        <h3>Music Video Production</h3>
+                        <h4>2018-2020</h4>
+                        <p>Worked on 50+ music videos as Director, Scriptwriter, Choreographer, and Videographer.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card-icon">🎥</div>
+                    <div class="card-content">
+                        <h3>Photography & Videography</h3>
+                        <h4>2018</h4>
+                        <p>Trained in camera operation, video editing (Adobe Premiere Pro, Filmora), and photo editing.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card-icon">💃</div>
+                    <div class="card-content">
+                        <h3>Dance Instructor</h3>
+                        <h4>2018-2020</h4>
+                        <p>Taught dance to aspiring performers at Tanahun Rising Star Dance School.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card-icon">💻</div>
+                    <div class="card-content">
+                        <h3>Computer Instructor</h3>
+                        <h4>Galaxy Computer Institute, Nepal | 2016</h4>
+                        <p>Taught essential computer skills, including MS Word, Excel, and PowerPoint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">LANGUAGES</h2>
+            </div>
+            <div class="languages-grid">
+                <div class="language-item">
+                    
+                    <h3>Nepali</h3>
+                    <span class="proficiency">Native</span>
+                </div>
+                <div class="language-item">
+                    
+                    <h3>English</h3>
+                    <span class="proficiency">C1 Level</span>
+                </div>
+                <div class="language-item">
+                    
+                    <h3>German</h3>
+                    <span class="proficiency">B1 Level</span>
+                </div>
+                <div class="language-item">
+                    
+                    <h3>Hindi</h3>
+                    <span class="proficiency">C1 Level</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="portfolio-content">
+                <div class="portfolio-illustration">
+                    <div class="coding-illustration">
+                        <div class="person-coding">
+                            <div class="person">
+                                <div class="head"></div>
+                                <div class="body"></div>
+                                <div class="arm-left"></div>
+                                <div class="arm-right"></div>
+                            </div>
+                            <div class="desk">
+                                <div class="laptop">
+                                    <div class="screen">
+                                        <div class="code-line"></div>
+                                        <div class="code-line short"></div>
+                                        <div class="code-line"></div>
+                                        <div class="code-line medium"></div>
+                                    </div>
+                                </div>
+                                <div class="coffee-cup"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="portfolio-title">The story of me coding</h2>
+                <p class="portfolio-subtitle">
+                    Passionate about creating digital experiences that make a difference. Every line of code tells a story, 
+                    and I'm dedicated to crafting clean, efficient, and user-friendly solutions that bring ideas to life.
                 </p>
             </div>
-            <div class="image">
-                <img src="images/your-image.jpg" alt="Kiran Thapa">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Education Section -->
-<section id="education">
-    <h1>Education</h1>
-    <div class="timeline-container">
-        
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item">
-            <div class="timeline-line"></div>
-            <div class="timeline-icon">
-                <i class="fas fa-graduation-cap"></i> <!-- Graduation icon -->
-            </div>
-            <div class="timeline-content">
-                <h3>2021 - Present</h3>
-                <h4>Hamburg University of Applied Sciences (HAW)</h4>
-                <p>Pursuing a Bachelor's degree in Information and Electrical Engineering</p>
-            </div>
-        </div>
-
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item">
-            <div class="timeline-line"></div>
-            <div class="timeline-icon">
-                <i class="fas fa-university"></i> <!-- University icon -->
-            </div>
-            <div class="timeline-content">
-                <h3>2020</h3>
-                <h4>TU Board, Aadikavi Bhanubhakta Campus</h4>
-                <p>Pursued Information and Communication Technology Education. Achieved a GPA of 3.20 in the first semester and 3.25 in the second.</p>
-            </div>
-        </div>
-
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item">
-            <div class="timeline-line"></div>
-            <div class="timeline-icon">
-                <i class="fas fa-school"></i> <!-- School icon -->
-            </div>
-            <div class="timeline-content">
-                <h3>2015</h3>
-                <h4>Satyawati Higher Secondary School</h4>
-                <p>Completed up to Grade 10 at Satyawati Higher Secondary School with a GPA of 3.56.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="experience" class="portfolio">
-        <h1 class="title">Experience</h1>
-        <div class="grid">
-            <div class="card">
-                <div class="icon">🌐</div>
-                <h2>Front-End Developer Intern</h2>
-                <h3>28Softwares Pvt. Ltd. | 2025</h3>
-                <p>Developed responsive web applications and worked with HTML, CSS, JavaScript, and React.js.</p>
-            </div>
-       
-
-            
-            
-            <div class="card">
-                <div class="icon">📸</div>
-                <h2>Editorial Photography</h2>
-                <h3>2020</h3>
-                <p>Captured photographs for Paris MOEVIR magazine, featuring Miss Globe Germany 2020.</p>
-            </div>
-            
-            <div class="card">
-                <div class="icon">🎬</div>
-                <h2>Music Video Production</h2>
-                <h3>2018-2020</h3>
-                <p>Worked on 50+ music videos as Director, Scriptwriter, Choreographer, and Videographer.</p>
-            </div>
-            <div class="card">
-                <div class="icon">🎥</div>
-                <h2>Photography & Videography</h2>
-                <h3>2018</h3>
-                <p>Trained in camera operation, video editing (Adobe Premiere Pro, Filmora), and photo editing.</p>
-            </div>
-            <div class="card">
-                <div class="icon">💃</div>
-                <h2>Dance Instructor</h2>
-                <h3>2018-2020</h3>
-                <p>Taught dance to aspiring performers at Tanahun Rising Star Dance School.</p>
-            </div>
-            <div class="card">
-                <div class="icon">💻</div>
-                <h2>Instructor</h2>
-                <h3>Galaxy Computer Institute, Nepal | 2016</h3>
-                <p>Taught essential computer skills, including MS Word, Excel, and PowerPoint.</p>
-            </div>
-            
         </div>
     </section>
 
-    <!--Cinematic Video Section -->
-    <section id="videos">
-        <div class="overlay-videos"></div> <!-- Dark Overlay -->
-        <h2 class="headline">🎥 My Cinematic Creations</h2>
-
-        <div class="video-section">
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/Nc__anwbXug" allowfullscreen></iframe>
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MY CINEMATIC CREATIONS</h2>
             </div>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/TlNoNnM3aBY" allowfullscreen></iframe>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/Nc__anwbXug" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/TlNoNnM3aBY" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    
-    <footer class="footer">
-        <div class="footer-container">
-            
-    
-            <!-- Copyright / Name -->
-            <div class="footer-text">
-                © 2025 Kiran Thapa
-            </div>
-    
-            <!-- Social Media Links -->
-            <div class="social-icons">
-                <a href="https://www.instagram.com/kiran_thapa.me/" class="social-btn">
-                    <i class="fab fa-instagram fa-2x"></i>
-                </a>
-                <a href="https://www.youtube.com/@kiran_Rojika" class="social-btn">
-                    <i class="fab fa-youtube fa-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kiran-thapa-342a60265/" class="social-btn">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-            </div>
-    
-            <!-- Contact Button -->
-            <div>
-                <a href="mailto:kiranthapa.me@gmail.com" class="contact-btn">Contact Me</a>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="contact-title">Let's work together</h2>
+                <p class="contact-text">
+                    Ready to start your next project? Let's create something amazing together.
+                </p>
+                <div class="contact-buttons">
+                    <a href="mailto:kiranthapa.me@gmail.com" class="btn-primary">GET IN TOUCH</a>
+                    <div class="social-contact">
+                        <a href="https://www.instagram.com/kiran_thapa.me/" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@kiran_Rojika" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kiran-thapa-342a60265/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        
-    </footer>
-    <div id="greeting"></div> 
-    <div id="digital-clock">
-        <p id="clock"></p>
-      </div>
-      
-     
+    </section>
+<script>
+        // Simulate loading process
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            const progressText = document.querySelector('.progress-text');
+            
+            const loadingStages = [
+                'Initializing...',
+                'Loading Assets...',
+                'Preparing Experience...',
+                'Almost Ready...',
+                'Welcome!'
+            ];
+            
+            let currentStage = 0;
+            
+            const updateLoadingText = () => {
+                if (currentStage < loadingStages.length) {
+                    progressText.textContent = loadingStages[currentStage];
+                    currentStage++;
+                }
+            };
+            
+            // Update loading text every 800ms
+            const textInterval = setInterval(updateLoadingText, 800);
+            
+            // Hide loading screen after 4.5 seconds
+            setTimeout(() => {
+                clearInterval(textInterval);
+                loadingScreen.classList.add('hidden');
+                
+                // Remove loading screen from DOM after transition
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 1000);
+            }, 4500);
+        });
+    </script>
     <script src="script.js"></script>
-
-
-
-    
 </body>
 </html>
-
-       
-    
